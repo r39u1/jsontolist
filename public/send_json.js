@@ -1,6 +1,8 @@
 function sendJson(url) {
     let json = JSON.parse(document.getElementById('json_textarea').value);
     let result = document.getElementById('result_container');
+    url += '?json=' + encodeURIComponent(JSON.stringify(json));
+    console.log(url);
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -9,5 +11,5 @@ function sendJson(url) {
             result.innerHTML = this.responseText;
         }
     };
-    xhr.send(json);
+    xhr.send();
 }

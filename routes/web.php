@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JsonToListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,6 @@ Route::get('/', function () {
     return view('send_json');
 });
 
-Route::get('/jsontolist', function () {
-    return '<p>Hello</p>';
-})->name('jsonToList');
+Route::get('/jsontolist', 
+    [JsonToListController::class, 'convert'],
+)->name('jsonToList');

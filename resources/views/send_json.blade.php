@@ -11,8 +11,6 @@
         <button onclick="sendJson('{{ route('jsonToList') }}')">Send JSON</button>
     </div>
     <hr>
-    <div id="result_container">
-
-    </div>
+    <div id="result_container"></div>
 </body>
 </html>
