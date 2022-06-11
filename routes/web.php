@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/jsontolist', function () {
-    return 'Hello';
+    return '<p>Hello</p>';
 })->name('jsonToList');
