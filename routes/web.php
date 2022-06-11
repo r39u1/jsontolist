@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('send_json');
 });
+
+Route::get('/jsontolist', function () {
+    return 'Hello';
+})->name('jsonToList');
