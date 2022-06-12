@@ -10,12 +10,21 @@
 
 <link rel="stylesheet" href="/collapsible_list.css">
 
-<ul>
-    @include('json_to_list_li', [
-        'data' => $data,
-        'depth' => $depth,
-        'currentDepth' => 1
-    ])
-</ul>
+<div 
+    @if (!empty($backgroundUrl))
+        style="background: url('{{ $backgroundUrl }}')"
+    @elseif (!empty($backgroundRgb))
+        style="background: rgb{{ $backgroundRgb }}"
+    @endif
+>
+    <ul>
+        @include('json_to_list_li', [
+            'data' => $data,
+            'depth' => $depth,
+            'currentDepth' => 1
+        ])
+    </ul>
+</div>
+
 
 <script src="/collapsible_list.js"></script>
