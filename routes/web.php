@@ -18,10 +18,14 @@ Route::get('/', function () {
     return view('send_json');
 });
 
-Route::get('/send_json_get', function () {
-    return view('send_json_get');
+Route::get('/send_json_js', function () {
+    return view('send_json_js');
 });
 
 Route::get('/jsontolist', 
+    [JsonToListController::class, 'convert'],
+)->name('jsonToList');
+
+Route::post('/jsontolist', 
     [JsonToListController::class, 'convert'],
 )->name('jsonToList');
