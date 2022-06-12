@@ -42,3 +42,7 @@ server {
     }
 }
 ```
+
+HTTP authentication enabled, path to .htpasswd:
+```
+/docker/nginx/sites/.htpasswd
