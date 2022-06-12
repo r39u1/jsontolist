@@ -12,5 +12,7 @@
         <button onclick="sendJsonPost('{{ route('jsonToList') }}')">Send JSON POST</button>
     </div>
     <hr>
+
+    @include('errors')
 </body>
 </html>
