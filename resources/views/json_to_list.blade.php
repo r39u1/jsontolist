@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 @php
     function item_has_child($item) {
         return is_object($item) or is_array($item);
@@ -7,10 +8,12 @@
         return $depth === "max" or $currentDepth <= $depth;
     }
 @endphp
-
-<link rel="stylesheet" href="/collapsible_list.css">
-
-<div 
+<html>
+<head>
+    <title>JSON to List</title>
+    <link rel="stylesheet" href="/collapsible_list.css">
+</head>
+<body 
     @if (!empty($background['url']))
         style="background: url('{{ $background['url'] }}')"
     @elseif (!empty($background['rgb']))
@@ -24,7 +27,7 @@
             'currentDepth' => 1
         ])
     </ul>
-</div>
 
-
-<script src="/collapsible_list.js"></script>
+    <script src="/collapsible_list.js"></script>
+</body>
+</html>
