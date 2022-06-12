@@ -1,0 +1,5 @@
+2022/06/12 15:44:06 [error] 14#14: *1 user "user": password mismatch, client: 172.18.0.1, server: laravel.dev.local, request: "GET /send_json_js HTTP/1.1", host: "localhost"
+2022/06/12 15:49:45 [error] 13#13: *1 user "user": password mismatch, client: 172.18.0.1, server: laravel.dev.local, request: "GET / HTTP/1.1", host: "localhost"
+2022/06/12 15:49:49 [error] 13#13: *1 user "user": password mismatch, client: 172.18.0.1, server: laravel.dev.local, request: "GET / HTTP/1.1", host: "localhost"
+2022/06/12 15:49:52 [error] 13#13: *1 user "user": password mismatch, client: 172.18.0.1, server: laravel.dev.local, request: "GET / HTTP/1.1", host: "localhost"
+2022/06/12 15:49:56 [error] 13#13: *1 user "user": password mismatch, client: 172.18.0.1, server: laravel.dev.local, request: "GET / HTTP/1.1", host: "localhost"
