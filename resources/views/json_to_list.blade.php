@@ -11,10 +11,10 @@
 <link rel="stylesheet" href="/collapsible_list.css">
 
 <div 
-    @if (!empty($backgroundUrl))
-        style="background: url('{{ $backgroundUrl }}')"
-    @elseif (!empty($backgroundRgb))
-        style="background: rgb{{ $backgroundRgb }}"
+    @if (!empty($background['url']))
+        style="background: url('{{ $background['url'] }}')"
+    @elseif (!empty($background['rgb']))
+        style="background: rgb{{ $background['rgb'] }}"
     @endif
 >
     <ul>

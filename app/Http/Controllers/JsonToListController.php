@@ -17,8 +17,7 @@ class JsonToListController extends Controller
         return view('json_to_list', [
             'data' => $data,
             'depth' => $depth,
-            'backgroundUrl' => $background['url'],
-            'backgroundRgb' => $background['rgb']
+            'background' => $background
         ]);
     }
 
