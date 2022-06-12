@@ -1,0 +1,23 @@
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list_button::before {
+    content: "+";
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.minus::before {
+    content: "-";
+}

@@ -1,13 +1,13 @@
+@php
+    function item_has_child($item) {
+        return is_object($item) or is_array($item);
+    }    
+@endphp
+
+<link rel="stylesheet" href="/collapsible_list.css">
+
 <ul>
-    @foreach ($data as $key => $value)
-        <li>
-            Name: {{ $key }}, 
-            Type: {{ gettype($value) }}: 
-            @if (is_object($value) or is_array($value))
-                @include('json_to_list_nested', ['data' => $value])
-            @else
-                Value: {{ $value }}
-            @endif   
-        </li>
-    @endforeach
+    @include('json_to_list_li', ['data' => $data])
 </ul>
+
+<script src="/collapsible_list.js"></script>
