@@ -5,12 +5,12 @@
     <script src="/send_json.js"></script>
 </head>
 <body>
-    <div id="send_json_container" align="center">
-        <label for="json_textarea">JSON</label><br>
-        <textarea id="json_textarea" rows="20" cols="75"></textarea><br>
-        <button onclick="sendJson('{{ route('jsonToList') }}')">Send JSON</button>
+    <hr>
+    <div id="send_json_container">
+        @include('send_json_form_fields')
+        <button onclick="sendJsonGet('{{ route('jsonToList') }}')">Send JSON GET</button>
+        <button onclick="sendJsonPost('{{ route('jsonToList') }}')">Send JSON POST</button>
     </div>
     <hr>
-    <div id="result_container"></div>
 </body>
 </html>
