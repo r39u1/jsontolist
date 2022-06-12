@@ -1,6 +1,6 @@
 @csrf
-<label for="json_textarea">JSON</label><br>
-<textarea id="json_textarea" rows="20" cols="75" name="json"></textarea><br>
+<label for="json">JSON</label><br>
+<textarea id="json" name="json" rows="20" cols="75"></textarea><br>
 <label for="depth">Depth</label>
 <input id="depth" name="depth" type="text"><br>
 <label for="background">Background</label>
