@@ -8,9 +8,7 @@ class JsonToListController extends Controller
 {
     public function convert(Request $request) 
     {
-        if ($request->isJson()) {
-            $data = json_decode($request->input('json'));
-            return view('json_to_list', ['data' => $data]);
-        }     
+        $data = json_decode($request->input('json'));
+        return view('json_to_list', ['data' => $data]);
     }
 }
