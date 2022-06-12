@@ -22,10 +22,6 @@ Route::get('/send_json_js', function () {
     return view('send_json_js');
 });
 
-Route::get('/jsontolist', 
-    [JsonToListController::class, 'convert'],
-)->name('jsonToList');
-
-Route::post('/jsontolist', 
+Route::match(['get', 'post'], '/jsontolist', 
     [JsonToListController::class, 'convert'],
 )->name('jsonToList');
