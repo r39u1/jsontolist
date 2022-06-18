@@ -23,5 +23,5 @@ Route::get('/send_json_js', function () {
 });
 
 Route::match(['get', 'post'], '/json_to_list', 
-    [JsonToListController::class, 'convert'],
+    [JsonToListController::class, 'decode'],
 )->name('jsonToList');
