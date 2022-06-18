@@ -15,6 +15,12 @@ server {
     index index.php;
  
     charset utf-8;
+
+    # For https
+    listen 443 ssl;
+    listen [::]:443 ssl ipv6only=on;
+    ssl_certificate /etc/nginx/ssl/default.crt;
+    ssl_certificate_key /etc/nginx/ssl/default.key;
  
     location / {
         try_files $uri $uri/ /index.php?$query_string;
