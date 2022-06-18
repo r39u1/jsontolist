@@ -11,7 +11,7 @@ class JsonToListRequest extends FormRequest
     protected const RGB_COMMAS_REGEX = '/^\(\d+,\d+,\d+\)$/';
     protected const NUMBER_REGEX = '/^\d+$/';
     protected const MAX_REGEX = '/^max$/i';
-    
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -34,19 +34,23 @@ class JsonToListRequest extends FormRequest
             'depth' => [
                 'nullable',
                 function ($attribute, $value, $fail) {
-                    if (!preg_match(self::NUMBER_REGEX, $value) and 
+                    if (
+                        !preg_match(self::NUMBER_REGEX, $value) and
                         !preg_match(self::MAX_REGEX, $value) or
-                        strval($value) === '0') {
+                        strval($value) === '0'
+                    ) {
                         $fail('The ' . $attribute . ' is invalid.');
                     }
                 }
             ],
             'background' => [
-                'nullable', 
+                'nullable',
                 function ($attribute, $value, $fail) {
-                    if (!isset($value['url']) and 
+                    if (
+                        !isset($value['url']) and
                         !isset($value['rgb']) and
-                        !is_null($value)) {
+                        !is_null($value)
+                    ) {
                         $fail('The ' . $attribute . ' is invalid.');
                     }
                 }
@@ -56,11 +60,11 @@ class JsonToListRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        if(preg_match(self::URL_REGEX, $this->background)) {
+        if (preg_match(self::URL_REGEX, $this->background)) {
             $background['url'] = $this->background;
-        } elseif(preg_match(self::RGB_COMMAS_REGEX, $this->background)) {
+        } elseif (preg_match(self::RGB_COMMAS_REGEX, $this->background)) {
             $background['rgb'] = $this->background;
-        } elseif(preg_match(self::RGB_SEMICOLONS_REGEX, $this->background)) {
+        } elseif (preg_match(self::RGB_SEMICOLONS_REGEX, $this->background)) {
             $background['rgb'] = str_replace(';', ',', $this->background);
         }
 
@@ -68,6 +72,6 @@ class JsonToListRequest extends FormRequest
             $this->merge([
                 'background' => $background,
             ]);
-        }        
+        }
     }
 }

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Send JSON</title>
     <script src="/send_json.js"></script>
 </head>
+
 <body>
     <hr>
     <div id="send_json_container">
@@ -15,4 +17,5 @@
 
     @include('errors')
 </body>
+
 </html>
